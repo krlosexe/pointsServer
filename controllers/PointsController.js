@@ -41,7 +41,7 @@ exports.get = function(request, response) {
         if(data.length == 0){
             let total =  0
             let level =  1
-            response.status(200).json(total, level)
+            response.status(200).json({total, level})
         }else{
 
             let total =  data[0].total
