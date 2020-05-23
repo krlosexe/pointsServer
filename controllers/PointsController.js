@@ -43,39 +43,41 @@ exports.get = function(request, response) {
             console.log("···")
             response.status(204).json([])
             console.log("¢¢¢¢¢")
-            return 
+        }else{
+
+            let total =  data[0].total
+            let level = 0
+
+            if(total >= 0 && total <= 100){
+            level = 1
+            }
+
+            if(total >= 100 && total <= 200){
+            level = 2
+            }
+
+
+            if(total >= 200 && total <= 300){
+                level = 3
+            }
+
+
+            if(total >= 300 && total <= 400){
+                level = 4
+            }
+            
+            if(total >= 400 && total <= 500){
+                level = 5
+            }
+
+            if(total >= 500){
+                level = 6
+            }
+
+            response.status(200).json({total, level})
         }
         
-        let total =  data[0].total
-        let level = 0
-
-        if(total >= 0 && total <= 100){
-          level = 1
-        }
-
-        if(total >= 100 && total <= 200){
-          level = 2
-        }
-
-
-        if(total >= 200 && total <= 300){
-            level = 3
-        }
-
-
-        if(total >= 300 && total <= 400){
-            level = 4
-        }
         
-        if(total >= 400 && total <= 500){
-            level = 5
-        }
-
-        if(total >= 500){
-            level = 6
-        }
-
-        response.status(200).json({total, level})
 
     });
 
