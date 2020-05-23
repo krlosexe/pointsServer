@@ -41,6 +41,7 @@ exports.get = function(request, response) {
 
         if(!data){
             response.status(204).json([])
+            return 
         }
 
 
