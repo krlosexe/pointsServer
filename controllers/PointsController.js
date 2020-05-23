@@ -38,8 +38,8 @@ exports.get = function(request, response) {
             {_id: '$code', total: {$sum: '$points'} }
         }
     ]).toArray(function(err, data) {
-        console.log(data.lenght)
-        if(data.lenght == 0){
+        console.log(data.length)
+        if(data.length == 0){
             console.log("···")
             response.status(204).json([])
             console.log("¢¢¢¢¢")
