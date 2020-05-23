@@ -39,8 +39,7 @@ exports.get = function(request, response) {
         }
     ]).toArray(function(err, data) {
 
-        console.log(data)
-        if(!data[0]){
+        if(!data){
             response.status(204).json([])
         }
 
