@@ -39,12 +39,11 @@ exports.get = function(request, response) {
         }
     ]).toArray(function(err, data) {
 
-        if(!data){
+        if(data.lenght == 0){
             response.status(204).json([])
             return 
         }
-
-
+        
         let total =  data[0].total
         let level = 0
 
